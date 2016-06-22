@@ -8,6 +8,7 @@ Parameters
 Parameters can be replaced with your own values when standing up a stack. Use
 the `-P` flag to specify a custom parameter.
 
+* `minecraft_gamemode`: Game Mode for Minecraft.  0 - Survival, 1 - Creative, 2 - Adventure, 3 - Spectator (Default: 1)
 * `minecraft_difficulty`: Difficulty level for Minecraft.  0 - Peaceful, 1 - Easy, 2 - Normal, 3 - Hard (Default: 2)
 * `minecraft_monsters`: Enable or disable spawning of hostile mobs (Default: True)
 * `minecraft_hardcore`: Enable or disable Hardcore mode.  In Hardcore mode, users will be banned from the server upon death (Default: False)

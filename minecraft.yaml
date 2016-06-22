@@ -4,6 +4,17 @@ description: Deploys an OpenStack instance for Minecraft
 
 parameters:
   #Minecraft Customization
+  minecraft_gamemode:
+    type: number
+    label: Game Mode
+    description: Game Mode for Minecraft.  0 - Survival, 1 - Creative, 2 - Adventure, 3 - Spectator
+    default: 1
+    constraints:
+    - allowed_values:
+      - 0
+      - 1
+      - 2
+      - 3
   minecraft_difficulty:
     type: number
     label: Difficulty
