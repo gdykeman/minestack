@@ -30,7 +30,7 @@ parameters:
     type: boolean
     label: Spawn Monsters
     description: Enable or disable spawning of hostile mobs
-    default: true
+    default: false
   minecraft_hardcore:
     type: boolean
     label: Hardcore Mode
@@ -178,8 +178,9 @@ resources:
               apt-get install -y unzip git wget ansible python2.7 software-properties-common
               mkdir -p /etc/ansible/roles
               git clone https://github.com/hhoover/minecraft-role.git /etc/ansible/roles
-              ansible-playbook /etc/ansible/roles/playbook.yaml --extra-vars "minecraft_difficulty=%minecraft_difficulty% minecraft_monsters=%minecraft_monsters% minecraft_hardcore=%minecraft_hardcore% minecraft_animals=%minecraft_animals% minecraft_npcs=%minecraft_npcs% minecraft_motd=%minecraft_motd% minecraft_max_players=%minecraft_max_players% minecraft_online=%minecraft_online%"
+              ansible-playbook /etc/ansible/roles/playbook.yaml --extra-vars "minecraft_gamemode=%minecraft_gamemode% minecraft_difficulty=%minecraft_difficulty% minecraft_monsters=%minecraft_monsters% minecraft_hardcore=%minecraft_hardcore% minecraft_animals=%minecraft_animals% minecraft_npcs=%minecraft_npcs% minecraft_motd=%minecraft_motd% minecraft_max_players=%minecraft_max_players% minecraft_online=%minecraft_online%"
            params:
+             "%minecraft_gamemode%": { get_param: minecraft_gamemode }
              "%minecraft_difficulty%": { get_param: minecraft_difficulty }
              "%minecraft_monsters%": { get_param: minecraft_monsters }
              "%minecraft_hardcore%": { get_param: minecraft_hardcore }
