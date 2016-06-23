@@ -76,7 +76,7 @@ parameters:
     type: string
     label: Flavor
     default: m1.medium
-    description: Flavor of Cloud Server to use for Minecraft
+    description: Flavor to use for Minecraft
     constraints:
     - allowed_values:
       - m1.small
@@ -117,7 +117,7 @@ resources:
   router:
     type: OS::Neutron::Router
     properties:
-      name: MantlRouter
+      name: minecraftRouter
       external_gateway_info:
         network: { get_param: public_net_id }
 
